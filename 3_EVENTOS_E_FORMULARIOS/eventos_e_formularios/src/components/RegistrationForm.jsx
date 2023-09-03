@@ -8,12 +8,6 @@ const RegistrationForm = () => {
         password: ""
     });
     
-    const [errors, setErrors] = useState({
-        name: "",
-        email: "",
-        password: ""
-    });
-
     const handleChange = (event) => {
         setValues({
             ...values,
@@ -25,14 +19,7 @@ const RegistrationForm = () => {
         event.preventDefault();
         console.log(values);
     }
-
-    // const validate = (name, value) => {
-    //     let errorMessage = "";
-    //     switch (name) {
-
-    //     }
-    // }
-
+    
     return (
         <form onSubmit={handleSubimt}>
             <div>
