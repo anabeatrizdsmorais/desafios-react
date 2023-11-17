@@ -7,22 +7,44 @@ const MultiPartForm = () => {
         email: "",
         senha: "",
     });
+    
+    const nextStep = () => {
+        if(step === 1 && formValues.nome === ""){
+            alert('Por favor, preencha o campo.');
+        } else if(step === 2 && formValues.email === "") {
+            alert('Por favor, preencha o campo.');
+        } else {
+            setStep(step+1);
+        }
+    }
 
     const previousStep = () => {
         setStep(step-1);
     }
-    
-    const nextStep = () => {
-        setStep(step+1);
+
+    const handleChange = (event) => {
+        setFormValues({
+            ...formValues,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if(formValues.senha === "") {
+            alert('Por favor, preencha o campo senha.');
+        }
     }
     
+    
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             { step === 1 && (
                 <div>
                     <label>
                         <p>Nome:</p>
-                        <input type="text" name='nome' />
+                        <input type="text" name='nome' onChange={handleChange}/>
                     </label>
                 </div>
             )}
@@ -30,7 +52,7 @@ const MultiPartForm = () => {
                 <div>
                     <label>
                         <p>Email:</p>
-                        <input type="email" name='email' />
+                        <input type="email" name='email' onChange={handleChange}/>
                     </label>
                 </div>
             )}
@@ -38,7 +60,7 @@ const MultiPartForm = () => {
                 <div>
                     <label>
                         <p>Senha:</p>
-                        <input type="password" name='password' />
+                        <input type="password" name='senha' onChange={handleChange}/>
                     </label>
                 </div>
             )}
