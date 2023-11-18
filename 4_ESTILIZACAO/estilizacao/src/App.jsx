@@ -4,6 +4,7 @@ import HelloWorld from './components/HelloWorld'
 import Button from './components/Button'
 import ThemeToggle from './components/ThemeToggle'
 import StyledComponentExample from './components/StyledComponentExample'
+import Card from './components/Card'
 
 function App() {
 
@@ -30,7 +31,13 @@ function App() {
 
         <hr />
         4- Styled components
+        <br></br>
         <StyledComponentExample />
+        
+        <hr />
+        5- Sass com React
+        <br></br>
+        <Card title="Titulo do Card" body="A descrição do card é essa." />
 
 
     </>
