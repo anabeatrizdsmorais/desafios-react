@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 
 import postStore from './context/posts/store';
 import PostsList from './components/PostsList';
+import MyForm from './components/MyForm';
 
 function App() {
  
@@ -34,6 +35,12 @@ function App() {
       <Provider store={postStore}>
         <PostsList />
       </Provider>
+
+      <hr />
+      {/* 4- Formulário com React Final Form */}
+      <h2>4- Formulário com React Final Form</h2>
+      <MyForm />
+      
     </>
   )
 }
